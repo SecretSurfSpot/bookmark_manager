@@ -4,7 +4,9 @@ class BookmarkManager < Sinatra::Base
 
   get '/' do
     "Hello world"
+    erb :index
   end
+
 
 
   # Required if running from command line (ruby app.rb) and not using 'rackup'
