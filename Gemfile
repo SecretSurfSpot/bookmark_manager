@@ -1,5 +1,8 @@
-source "https://rubygems.org"
+source 'https://rubygems.org'
 
-require "sinatra"
-require "capybara"
-require "rspec"
+gem 'capybara'
+gem 'rspec'
+gem 'rubocop'
+gem 'simplecov'
+gem 'simplecov-console'
+gem 'sinatra'
