@@ -1,6 +1,6 @@
 # bookmark_manager
 
-User Story 1:
+User Story 1:  
 As a user,  
 So I can quickly visit my favourite pages,  
 I would like to see a list of my bookmarks.  
