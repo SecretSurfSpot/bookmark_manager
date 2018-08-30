@@ -14,3 +14,12 @@ feature 'viewing bookmarks' do
     expect(page).to have_content 'http://facebook.com'
   end
 end
+
+feature 'add new bookmark' do
+  scenario 'users visits add page and can add a new URL' do
+    visit '/add'
+    fill_in('url', with: 'http://w3schools.com')
+    click_button 'Save'
+    expect(page).to have_content "You've just added: http://w3schools.com"
+  end
+end

@@ -24,6 +24,15 @@
         1,
         null,
         null,
+        null,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        null,
+        null,
         null
       ],
       "/Users/andrewgibbs/Projects/bookmark_manager/spec/features/features_spec.rb": [
@@ -42,9 +51,18 @@
         1,
         1,
         null,
+        null,
+        null,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        null,
         null
       ]
     },
-    "timestamp": 1535632103
+    "timestamp": 1535642759
   }
 }

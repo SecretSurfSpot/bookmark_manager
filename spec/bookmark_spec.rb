@@ -20,4 +20,13 @@ describe Bookmark do
       expect(bookmarks).to include('http://facebook.com')
     end
   end
+
+  describe "#create" do
+    it "adds a new bookmark" do
+      saved_url = 'http://w3schools.com'
+      Bookmark.create(saved_url)
+      expect(Bookmark.all).to include(saved_url)
+      expect(Bookmark.all).to match_array(['http://w3schools.com'])
+    end
+  end
 end
