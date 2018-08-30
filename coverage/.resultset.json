@@ -1,14 +1,12 @@
 {
   "RSpec": {
     "coverage": {
-      "/Users/andrewgibbs/Projects/bookmark_manager/spec/bookmark_spec.rb": [
+      "/Users/becky/work/bookmark-2/bookmark_manager/spec/bookmark_spec.rb": [
         1,
         1,
         1,
         1,
         1,
-        1,
-        null,
         1,
         null,
         null,
@@ -35,7 +33,7 @@
         null,
         null
       ],
-      "/Users/andrewgibbs/Projects/bookmark_manager/spec/features/features_spec.rb": [
+      "/Users/becky/work/bookmark-2/bookmark_manager/spec/features/features_spec.rb": [
         1,
         null,
         1,
@@ -63,6 +61,6 @@
         null
       ]
     },
-    "timestamp": 1535642759
+    "timestamp": 1535643638
   }
 }
