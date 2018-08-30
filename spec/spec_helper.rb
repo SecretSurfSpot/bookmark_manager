@@ -17,8 +17,10 @@ require 'capybara/rspec'
 require 'simplecov'
 require 'simplecov-console'
 require './app'
+require_relative './setup_test_database'
 #require_relative './features/web_helpers'
 
+ENV['ENVIRONMENT'] = 'test'
 ENV['RACK_ENV'] = 'test'
 
 Capybara.app = BookmarkManager
@@ -29,6 +31,21 @@ SimpleCov.formatter = SimpleCov::Formatter::MultiFormatter.new([
   # SimpleCov::Formatter::HTMLFormatter
 ])
 SimpleCov.start
+
+# Method that connects to the bookmark_manager_test DB
+# and selects all the urls contained in the bookmark tbl.
+# This method is used by the bookmark_spec.rb file
+# def get_urls_from_bookmark_manager_test_database
+#   connection = PG.connect(dbname: 'bookmark_manager_test')
+#   result = connection.exec('SELECT * FROM bookmarks')
+#   result.map { |bookmark| bookmark['url'] }
+# end
+
+RSpec.configure do |config|
+  config.before(:each) do
+    setup_test_database
+  end
+end
 
 RSpec.configure do |config|
   config.after(:suite) do

@@ -1,7 +1,17 @@
 require 'bookmark'
+require 'pg'
+require_relative 'spec_helper'
 describe Bookmark do
   describe "#all" do
     it  "displays a list of all bookmarks" do
+
+      connection = PG.connect(dbname: 'bookmark_manager_test')
+      #bookmarks = get_urls_from_bookmark_manager_test_database
+      # Add test data into bookmarks table
+      connection.exec("INSERT INTO bookmarks VALUES(1,'http://google.com');")
+      connection.exec("INSERT INTO bookmarks VALUES(2,'http://bbc.co.uk');")
+      connection.exec("INSERT INTO bookmarks VALUES(3,'http://facebook.com');")
+
       bookmarks = Bookmark.all
 
       expect(bookmarks).to match_array(['http://google.com','http://bbc.co.uk','http://facebook.com'])
