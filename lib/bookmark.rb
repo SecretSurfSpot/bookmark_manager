@@ -1,4 +1,5 @@
 require 'pg'
+require 'uri'
 
 class Bookmark
 
@@ -21,8 +22,11 @@ class Bookmark
     end
 
     connection.exec("INSERT INTO bookmarks (url) VALUES('#{url}');")
-
-
   end
+
+  def self.validate(url)
+    url =~ /\A#{URI::regexp(['http', 'https'])}\z/ # Correct URL
+  end
+
 
 end
