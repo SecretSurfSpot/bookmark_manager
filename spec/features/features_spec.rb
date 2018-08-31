@@ -7,7 +7,7 @@ feature 'viewing bookmarks' do
     Bookmark.create('http://google.com')
     Bookmark.create('http://bbc.co.uk')
     Bookmark.create('http://facebook.com')
-    visit ('/')
+    visit ('/bookmarks')
     expect(page).to have_content 'http://google.com'
     expect(page).to have_content 'http://bbc.co.uk'
     expect(page).to have_content 'http://facebook.com'
@@ -15,7 +15,7 @@ feature 'viewing bookmarks' do
 end
 
 feature 'add new bookmark' do
-  scenario 'users visits add page and can add a new URL' do
+  scenario 'user can add a bookmark to bookmark manager' do
     visit '/add'
     fill_in('url', with: 'http://w3schools.com')
     click_button 'Save'
