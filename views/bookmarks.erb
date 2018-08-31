@@ -1,11 +1,15 @@
 <center>
   <form action="/add" method="get">
-    <input value="Add Link" type="submit">
+    <input value="Add" type="submit" name="Add Link">
   </form>
 </center>
 
 <ul>
   <% @bookmarks.each do |bookmark| %>
-    <li><%= bookmark %></li><br>
+    <li>
+      <a href="<%= bookmark.url %>">
+        <%= bookmark.title %>
+      </a>
+    </li>
   <% end %>
 </ul>

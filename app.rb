@@ -9,7 +9,7 @@ class BookmarkManager < Sinatra::Base
   get '/' do
     redirect '/bookmarks'
   end
-  
+
   get '/bookmarks' do
     @bookmarks = Bookmark.all
     erb :bookmarks
@@ -20,9 +20,8 @@ class BookmarkManager < Sinatra::Base
   end
 
   post '/save_url' do
-    session[:url] = params[:url]
-    if Bookmark.validate(session[:url])
-      Bookmark.create(session[:url])
+    if Bookmark.validate(params[:url])
+      Bookmark.create(url: params[:url], title: params[:title])
       redirect '/bookmarks'
     else
       flash[:error] = "Invalid url entered, please enter a valid url"
